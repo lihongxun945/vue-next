@@ -28,6 +28,13 @@ describe('reactivity/effect', () => {
     expect(dummy).toBe(7)
   })
 
+  it('should observe basic properties', () => {
+    const counter = reactive({ num: 0 })
+    effect(() => console.log(counter.num))
+    counter.num = 7
+    counter.num = 8
+  })
+
   it('should observe multiple properties', () => {
     let dummy
     const counter = reactive({ num1: 0, num2: 0 })

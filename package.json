@@ -11,6 +11,7 @@
     "lint": "prettier --write --parser typescript \"packages/**/*.ts?(x)\"",
     "ls-lint": "ls-lint",
     "test": "node scripts/build.js vue -f global -d && jest",
+    "test-debug": "node scripts/build.js vue -f global -d && node --inspect-brk node_modules/.bin/jest --runInBand ",
     "test-dts": "node scripts/build.js shared reactivity runtime-core runtime-dom -dt -f esm-bundler && tsd",
     "release": "node scripts/release.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
